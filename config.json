@@ -1,0 +1,12 @@
+{
+    "slack_api_token": "App 토큰 추가 필요",
+    "display_information": {
+        "name": "Who is working"
+    },
+    "settings": {
+        "org_deploy_enabled": false,
+        "socket_mode_enabled": false,
+        "is_hosted": false,
+        "token_rotation_enabled": false
+    }
+}
