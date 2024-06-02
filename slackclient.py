@@ -4,25 +4,25 @@ from datetime import datetime
 from collections import defaultdict
 import pytz
 
-# Slack 액세스 토큰 설정
-# config.json에 slack app 생성하여 token 넣을 것.
-# gitignore 추가 귀찮
+# Slack Access Token setting 액세스 토큰 설정
+# Add slack app token in config.json
 with open('config.json') as config_file:
     config = json.load(config_file)
     token = config.get('slack_api_token')
     client = WebClient(token=token)
 
-# team 채널
-channel_id = "C028MDPEUU9"
+# Your channel ID wanted to counting messages
+channel_id = "Your channel ID"
 
 
+# Setting timezone anything you want
 current_time = datetime.now(pytz.utc)
 kr_tz = pytz.timezone('Asia/Seoul')
 current_time_kr = current_time.astimezone(kr_tz)
 
 start_time = current_time_kr.replace(hour=8, minute=0)
 
-# 오전 8시부터
+# Set the time for reading the message
 start_timestamp = int(start_time.timestamp())
 end_timestamp = int(current_time_kr.timestamp())
 
@@ -42,7 +42,7 @@ user_dict = {user['id']: user['profile']['display_name'] for user in user_info['
 
 result = []
 
-# 예외
+# 예외 for kidding
 result.append(("박정훈 Developer_개발사업부", 10000))
 
 for user_id, count in user_counts.items():
